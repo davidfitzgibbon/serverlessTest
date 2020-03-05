@@ -1,4 +1,4 @@
-const fetch = require('node_modules/node-fetch')
+const fetch = require('./node_modules/node-fetch')
 exports.handler = async function(event, context, callback) {
     // SETUP
     const domains = [
