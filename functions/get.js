@@ -5,7 +5,7 @@ exports.handler = async function(event, context, callback) {
     "https://api.github.com"
     ];
 
-    let path = event.path.replace("/api/get");
+    let path = event.path.replace("/api/get", "");
 
     var iterator = 0;
     for ( let i in path.queryStringParameters ) {
