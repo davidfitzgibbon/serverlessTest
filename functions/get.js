@@ -2,8 +2,8 @@ const fetch = require('./node_modules/node-fetch')
 exports.handler = async function(event, context, callback) {
     // SETUP
     const domains = [
-    "https://node.server",
-    "https://api.github.com"
+        "https://node.server",
+        "https://api.github.com"
     ];
 
     let path = event.path.replace("/api/get", "");
@@ -20,25 +20,17 @@ exports.handler = async function(event, context, callback) {
 
     // RUN
     // for ( let domain of domains) {
-        let response
-        try {
-            response = await fetch(domains[1] + path)
-            // handle response
-        } catch (err) {
-            return {
-                statusCode: err.statusCode || 500,
-                body: JSON.stringify({
-                    error: err.message
-                })
-            }
-        }
+        let variableName = `${domains[domains.length - 1]}/users/davidfitzgibbon/repos?type=owner&sort=updated`;
+        console.log(variableName)
+        let response = await fetch(variableName)
+        .then(res=> res.json())
+        .catch(error => console.error(error));
 
         return {
             statusCode: 200,
-            body: JSON.stringify({
-            data: response
-            })
-        }
+            body: JSON.stringify(response)
+          };
+
     // }
 
     // callback(null,{
