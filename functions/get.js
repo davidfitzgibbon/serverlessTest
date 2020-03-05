@@ -1,5 +1,6 @@
 // const fetch = require('node-fetch')
 exports.handler = async function(event, context, callback) {
+    // SETUP
     const domains = [
     "https://node.server",
     "https://api.github.com"
@@ -14,32 +15,36 @@ exports.handler = async function(event, context, callback) {
         iterator++;
     }
 
-    callback(null,{
-        statusCode: 200,
-        body: path
-    })
-//   try {
-//     const response = await fetch('https://api.chucknorris.io/jokes/random')
-//     if (!response.ok) {
-//       // NOT res.status >= 200 && res.status < 300
-//       return { statusCode: response.status, body: response.statusText }
-//     }
-//     const data = await response.json()
-
-//     return {
-//       statusCode: 200,
-//       body: JSON.stringify({ identity, user, msg: data.value })
-//     }
-//   } catch (err) {
-//     console.log(err) // output to netlify function log
-//     return {
-//       statusCode: 500,
-//       body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
-//     }
-//   }
+    // HELPER
 
 
+    // RUN
+    // for ( let domain of domains) {
+        let response
+        try {
+            response = await fetch(domains[1] + path)
+            // handle response
+        } catch (err) {
+            return {
+                statusCode: err.statusCode || 500,
+                body: JSON.stringify({
+                    error: err.message
+                })
+            }
+        }
 
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+            data: response
+            })
+        }
+    // }
+
+    // callback(null,{
+    //     statusCode: 200,
+    //     body: path
+    // })
 
 //   exports.handler = (event, _context, callback) => {
 //     var urls = [
