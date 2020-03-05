@@ -1,5 +1,5 @@
 // const fetch = require('node-fetch')
-exports.handler = async function(event, context) {
+exports.handler = async function(event, context, callback) {
     const domains = [
     "https://node.server",
     "https://api.github.com"
