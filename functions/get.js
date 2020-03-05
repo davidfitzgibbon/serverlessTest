@@ -8,9 +8,9 @@ exports.handler = async function(event, context) {
     let path = event.path.replace("/api/get");
 
     var iterator = 0;
-    for ( let i in queryStringParameters ) {
+    for ( let i in path.queryStringParameters ) {
         path += !iterator ?  "?" : "&";
-        path += `${i}=${queryStringParameters[i]}`;
+        path += `${i}=${path.queryStringParameters[i]}`;
         iterator++;
     }
 
