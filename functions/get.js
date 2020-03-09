@@ -23,11 +23,11 @@ exports.handler = async function(event, context, callback) {
         console.log(url)
         let hadError = false;
         let response = await fetch(url)
-        .then(res=> res.json()) // if there's a response, return it
-        .catch(error => { // else return the error
-            hadError = true;
-            return error;
-        });
+            .then(res=> res.json()) // if there's a response, return it
+            .catch(error => { // else return the error
+                hadError = true;
+                return error;
+            });
 
         // if there has been an error, dont return it, but try the next url
         currentDomain++;
@@ -35,8 +35,7 @@ exports.handler = async function(event, context, callback) {
             return getUrl();
         }
         // else we have something, return it
-        // this return the response or error,
-        // if it's the last url we're looking though
+        // this returns the response or, if it's the last domain, the error
         return {
             statusCode: 200,
             body: JSON.stringify(response)
