@@ -1,6 +1,6 @@
 const listRepos = async username => {
     const repos = await fetch(
-        `https://api.github.com/users/${username}/repos?type=owner&sort=updated`
+        `http://localhost:8888/api/get/users/${username}/repos?type=owner&sort=updated`
     )
 
     .then(res=> res.json())
@@ -10,7 +10,7 @@ const listRepos = async username => {
         .map(
             repo => `
                 <li>
-                    <a href=${repo.url}>${repo.name}</a>
+                    <a href=${repo.html_url}>${repo.name}</a>
                 </li>
             `
         )
@@ -20,4 +20,4 @@ const listRepos = async username => {
 
     content.innerHTML = `<ul>${markup}</ul>`;
 }
-listRepos('davidfitzgibbon')
+listRepos('jensimmons')
