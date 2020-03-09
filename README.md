@@ -27,5 +27,5 @@ To add a new domain to the list just add `||domain.com`.
 Do not include a trailing "/", this is accounted for in the url and could cause issues with urls like "/api?xyz=123".
 
 NOTE:
-1. Updating .env and comitting it to GitHub does not update the live Environment variables. This must be done from within GitHub.
+1. Updating .env and comitting it to GitHub does not update the live Environment variables. This must be done from within Netlify.
 2. The more domains you add, the slower your requests could become because the api may check each url, in order, before it responds.
