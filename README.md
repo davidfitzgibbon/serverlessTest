@@ -28,4 +28,5 @@ Do not include a trailing "/", this is accounted for in the url and could cause 
 
 NOTE:
 1. Updating .env and comitting it to GitHub does not update the live Environment variables. This must be done from within Netlify.
-2. The more domains you add, the slower your requests could become because the api may check each url, in order, before it responds.
+2. The more domains you add, the slower your requests could become. This is because the api will check each domain, in order, until it finds a valid response, before it responds.
+3. 3**s and 5**s are valid responses. These will return unless specifically removed. 
