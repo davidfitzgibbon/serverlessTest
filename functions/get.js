@@ -1,10 +1,10 @@
 require('dotenv').config();
-const fetch = require('/node_modules/node-fetch');
+const fetch = require('./node_modules/node-fetch');
 exports.handler = async function(event, context, callback) {
     // SETUP
     // domains we're going to check against, in order
     const domains = process.env.DOMAINS.split("||");
-    console.log(domains)
+    
     // create the path that we're going to check
     let path = event.path.replace("/api/get", "");
     let iterator = 0;
@@ -19,6 +19,7 @@ exports.handler = async function(event, context, callback) {
     let currentDomain = 0;
     async function getUrl() {
         let url = domains[currentDomain] + path;
+        console.log(url)
         let hadError = false;
         let response = await fetch(url)
         .then(res=> res.json()) // if there's a response, return it
@@ -28,8 +29,8 @@ exports.handler = async function(event, context, callback) {
         });
 
         // if there has been an error, dont return it, but try the next url
-        if ( hadError ) {
-            currentDomain++;
+        currentDomain++;
+        if ( (hadError || response.message === "Not Found") && currentDomain!==domains.length ) {
             return getUrl();
         }
         // else we have something, return it

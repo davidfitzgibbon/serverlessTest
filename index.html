@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Test</title>
+    <style>
+        a,
+        a:hover,
+        a:visited {
+            color: #e60000;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <h1>Repos</h1>
+        <h1>Test links:</h1>
 
-        <div id="content">Loading...</div>
+        <h3>Get a random joke</h3>
+        <p><a target="_blank" href="/api/get/random_joke">/api/get/random_joke</a></p>
+        <br>
+        
+
+        <h3>Get a specfic github users repos</h3>
+        <p><a target="_blank" href="http://localhost:8888/api/get/users/davidfitzgibbon/repos?type=owner&sort=updated">/api/get/users/davidfitzgibbon/repos?type=owner&sort=updated</a></p>
+        <br>
+        
+
+        <h3>Get Game of Thrones character information by id</h3>
+        <p><a target="_blank" href="http://localhost:8888/api/get/api/characters/583">/api/get/api/characters/583</a></p>
+        <br>
+        
+
+        <h3>Get a broken link</h3>
+        <p><a target="_blank" href="http://localhost:8888/api/get/broken">/api/get/broken</a></p>
+        <br>
+        
     </main>
-    
-    <script  type="module" src="./main.js"></script>
 </body>
 </html>
