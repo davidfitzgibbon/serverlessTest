@@ -1,5 +1,5 @@
 require('dotenv').config();
-const fetch = require('node_modules/node-fetch');
+const fetch = require('/node_modules/node-fetch');
 exports.handler = async function(event, context, callback) {
     // SETUP
     // domains we're going to check against, in order
