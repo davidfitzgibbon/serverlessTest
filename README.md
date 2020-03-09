@@ -14,7 +14,7 @@
 
 Demo page now visible at http://localhost:8888/
 
-Demo API now available at http://localhost:8888/api which is a rewrite of localhost:34567/.netlify/functions, done in netlify.toml
+Demo API now available at http://localhost:8888/api
 
 # To change domains list
 
