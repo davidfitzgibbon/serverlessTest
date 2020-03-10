@@ -2,7 +2,9 @@
 
 ### Install Netlify CLI
 
-```yarn global add netlify-cli```
+Run one of these commands depending on your setup
+
+`yarn global add netlify-cli` || `npm i netlify-cli -g`
 
 [docs](https://docs.netlify.com/cli/get-started/)
 
