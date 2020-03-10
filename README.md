@@ -3,6 +3,7 @@
 ### Install Netlify CLI
 
 ```yarn global add netlify-cli```
+
 [docs](https://docs.netlify.com/cli/get-started/)
 
 
@@ -13,7 +14,7 @@
 
 ### Set up your .env file
 
-You'll find the file `functions/.env-sample`. This is a started file for you to base your own `.env` file on. Create a copy of it and name it `.env`.
+You'll find the file `functions/.env-sample`. This is a started file for you to base your own `.env` file on. Create a copy of `.env-sample` in the same folder and name it `.env`.
 
 In this file is a variable called `DOMAINS`. This string contains all the domains that the API will check.
 
