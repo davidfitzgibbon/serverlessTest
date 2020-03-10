@@ -1,8 +1,9 @@
-# Install Requirements
+# Install
 
 ### Install Netlify CLI
 
 ```yarn global add netlify-cli```
+[docs](https://docs.netlify.com/cli/get-started/)
 
 
 ### Install requirements in functions folder
@@ -22,7 +23,7 @@ To add a new domain to the list just add `||domain.com`.
 
 Do not include a trailing `/`, this is accounted for in the url and could cause issues with urls like `/api?xyz=123`.
 
-# To Run
+# Run
 ```netlify dev```
 
 Demo page now visible at http://localhost:8888/
