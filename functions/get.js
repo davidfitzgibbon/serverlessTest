@@ -38,7 +38,8 @@ exports.handler = async function(event, context, callback) {
         // this returns the response or, if it's the last domain, the error
         return {
             statusCode: 200,
-            body: JSON.stringify(response)
+            body: JSON.stringify(response),
+            headers: { 'Content-Type': 'application/json' }
         };
     }
     return getUrl();
